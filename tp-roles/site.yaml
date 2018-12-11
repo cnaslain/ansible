@@ -1,7 +1,6 @@
 ---
 - name: "PLAY de création de l'utilisateur technique ansible'"
   hosts: all
-  remote_user: user
   become: yes
   gather_facts: false
   roles:
