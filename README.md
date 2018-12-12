@@ -6,13 +6,18 @@ Install prerequisites (on a Windows workstation):
 
 Clone this repo; and cd into it.
 
-Pop up CentOS VMs:
+Pop up CentOS VMs (usr/pwd for all these VMs are vagrant/vagrant):
 
     vagrant up
 
 Login into the 1rst VM:
 
     ssh vagrant@192.168.100.100
+    
+... and install Ansible using Yum commands (see install-ansible.txt file):
+
+    sudo yum -y install epel-release
+    sudo yum -y install ansible
 
 The run ansible commands and playbooks.
 
