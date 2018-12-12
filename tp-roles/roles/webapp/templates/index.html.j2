@@ -5,13 +5,13 @@
         <p>This webapp can be reached on any of the following IP addresses:</p> 
         <ul>        
 {% for host in groups['webservers'] %} 
-            <li>{{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}</li> 
+            <li><a href="http://{{ hostvars[host]['ansible_eth1']['ipv4']['address'] }}">{{ hostvars[host]['ansible_nodename'] }}</a> with IP={{ hostvars[host]['ansible_eth1']['ipv4']['address'] }}</li> 
 {% endfor %}
         </ul>
         <p>This webapp can be reached on any of the following host from the webservers groups:</p> 
         <ul>
 {% for host in groups['webservers'] %} 
-            <li>{{ hostvars[host]['ansible_nodename'] }}</li> 
+            <li><a href="http://{{ hostvars[host]['ansible_nodename'] }}/">{{ hostvars[host]['ansible_nodename'] }}</a></li> 
 {% endfor %}
         </ul>
     </body> 

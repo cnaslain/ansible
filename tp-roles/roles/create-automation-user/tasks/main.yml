@@ -9,7 +9,7 @@
   authorized_key: 
     user: ansible 
     state: present       
-    key: https://raw.githubusercontent.com/jptraining/ansible/master/keys/id_rsa.pub
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz5fseF8yXHhuF6J942M4Ggkz1tWbP6XucXcVX7KV++Zl0S3UNouO8FEyNUUaqtqNJ6u/N0U+HQcNlDRjqYnsvgXFGSTr7P7dWg31C85ZzT0QANTT1OTSWXDicpdBZrDDjB6v/cib6/hTakCKVqfG4NQljAg5ni1NrXFe3KUMBwBeHvEuRMZcb2c0m0DoQ4vb5M71UCW+j1ZfOISo2GT4rLKMgElgIe8vnS75S69XlC+RWcmAfpGB0HtnTDZGes2e/OBlveiyhRPNXTRw5VREFpqhe776xRqbZymWL/oXlgP/TWiS/WC8jeEgQFTTBtBsXaJCYWammNS3ew6EeB4C46oYFXGET8kQNwSuQo7cDMOVxb5Rdo68KkgSiRxLzQyo8HAcG3fuuNikldgEVe7Ihr6jrhxxCYj4WZwwlAxThmh9GYLumlLjPueUU/wlb8J0FeZr1aWrHd2ZG40yxPK7cUUMn2f4os5Jx+pRIUOw8z0w6eaObBzFJjvstnFnd+xVXszLXVkEOqIKUevzpi+BwEL4+96jzC0QOmOah0Ub/LXQGsUKCjgarkxLo+vCeG+LOSFvLDRWQo50PUkpt3qJ0igzDmPx8vIzMI3lHIKumJx54g+a5Qi7kWsfkxkO20+U5dguUXMjU4iML7RLcJZWPkY3m1SeUTaRmLjQWYxR1eQ== ansible automation key"
 - name: Ensure the line /etc/sudoers.d is present in sudoers file 
   lineinfile: 
     dest: /etc/sudoers

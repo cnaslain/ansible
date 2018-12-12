@@ -1,0 +1,23 @@
+---
+# tasks file for roles/common
+- name: Vérfifier que NTP est present 
+  apt: 
+    name: ntp 
+    state: present 
+- name: Vérfifier que le service NTP est lancé et est activé
+  service:
+    name: ntp
+    state: started
+- name: Vérfifier que tzdata est present 
+  apt: 
+    name: tzdata
+    state: present 
+- name: Supprimer la timezone système
+  file: 
+    path: /etc/localtime
+    state: absent
+- name: Vérfifier que le timezone est positionné à UTC
+  file:
+    src: /usr/share/zoneinfo/Europe/Paris
+    dest: /etc/localtime
+    state: link

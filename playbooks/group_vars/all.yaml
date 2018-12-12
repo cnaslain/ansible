@@ -19,7 +19,7 @@ state: present
 user_groups:
   - all
   - developpers
-  - whell
+  - wheel
 users:
   - name: user1
     group: developpers

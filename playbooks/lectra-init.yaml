@@ -1,0 +1,6 @@
+---
+- name: Install ansible prerequisites on all hosts
+  hosts: all
+  become: yes
+  roles:
+    - common-create-ansible-user

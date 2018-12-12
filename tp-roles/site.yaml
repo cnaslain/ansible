@@ -2,15 +2,14 @@
 - name: "PLAY de création de l'utilisateur technique ansible'"
   hosts: all
   become: yes
-  gather_facts: false
+  gather_facts: true
   roles:
   - role: create-automation-user
 
 - name: "PLAY de création de la base des données"
   hosts: database
-  remote_user: ansible
   become: yes
-  gather_facts: false
+  gather_facts: true
   tags: database  
   roles:
   - role: common
@@ -19,9 +18,8 @@
 
 - name: "PLAY de création du serveur web"
   hosts: webservers
-  remote_user: ansible
   become: yes
-  gather_facts: false
+  gather_facts: true
   tags: webservers  
   roles:
   - role: common
@@ -29,8 +27,8 @@
   - role: webserver
 
 - name: "PLAY de création de l'application web"
-  remote_user: ansible
   hosts: webservers
+  gather_facts: true
   tags: webapp
   roles:
   - role: webapp

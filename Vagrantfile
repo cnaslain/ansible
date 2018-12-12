@@ -29,17 +29,22 @@ Vagrant.configure("2") do |config|
       centos3.vm.hostname = "centos3"
       centos3.vm.network :private_network, ip: "192.168.100.120"
   end
-
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.define "ubuntu2" do |ubuntu2|
-      ubuntu2.vm.hostname = "ubuntu2"
-      ubuntu2.vm.network :private_network, ip: "192.168.100.200"
+  
+  config.vm.define "centos4" do |centos4|
+      centos4.vm.hostname = "centos4"
+      centos4.vm.network :private_network, ip: "192.168.100.130"
+  end
+  
+  config.vm.define "centos5" do |centos5|
+      centos5.vm.hostname = "centos5"
+      centos5.vm.network :private_network, ip: "192.168.100.140"
   end
 
-  config.vm.define "ubuntu1" do |ubuntu1|
-      ubuntu1.vm.hostname = "ubuntu1"
-      ubuntu1.vm.network :private_network, ip: "192.168.100.210"
-  end
+#  config.vm.box = "ubuntu/trusty64"
+#  config.vm.define "ubuntu" do |ubuntu|
+#      ubuntu.vm.hostname = "ubuntu"
+#      ubuntu.vm.network :private_network, ip: "192.168.100.200"
+#  end
 
 	config.vm.provision "shell", inline: <<-SHELL
       sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
@@ -47,13 +52,13 @@ Vagrant.configure("2") do |config|
       systemctl restart sshd
 	SHELL
 
-   config.vm.provider "virtualbox" do |vb|
+#   config.vm.provider "virtualbox" do |vb|
      # Display the VirtualBox GUI when booting the machine
-      vb.gui = true
-      vb.customize ["modifyvm", :id, "--memory", 1948]
+#      vb.gui = true
+#      vb.customize ["modifyvm", :id, "--memory", 1948]
 #      Customize the amount of memory on the VM:
-     vb.memory = "1948"
-   end
+#     vb.memory = "1948"
+#   end
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is

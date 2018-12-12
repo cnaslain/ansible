@@ -1,0 +1,13 @@
+---
+- name: Add emacs package
+  yum:
+    name: emacs
+    state: present
+- name: Add NTP package
+  yum:
+    name: ntp
+    state: present
+- name: Make sure HTTPD is not installed
+  yum:
+    name: httpd
+    state: absent

@@ -4,5 +4,14 @@
   tasks:
   - name: "This Is Task Documentation: This Task Executes The Command pwd On Target Hosts"
     command: pwd
+    register: res
+  - name: display result
+    debug:
+      var: res
   - name: "This Is Task Documentation: This Task Executes The Command 'ls -l /' On Target Hosts"
     command: ls -l /
+    register: res
+  - name: display result
+    debug:
+      var: res
+

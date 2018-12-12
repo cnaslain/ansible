@@ -1,0 +1,16 @@
+[loadbalancer]
+192.168.100.130
+
+[webservers]
+192.168.100.110
+
+[databases]
+192.168.100.120
+
+[production:children]
+loadbalancer
+webservers
+databases
+
+[production2:children]
+webservers
