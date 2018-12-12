@@ -18,6 +18,7 @@ Login into the 1rst VM:
 
     sudo yum -y install epel-release
     sudo yum -y install ansible
+    sudo yum -y install emacs net-tools wget curl
 
 The run ansible commands and playbooks.
 
