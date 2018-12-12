@@ -54,7 +54,7 @@ Other commands executed during the workshop (from .bash_history file; some may b
     cd ../vault/
     ansible-playbook vault.yaml --ask-vault-pass
     
-For AWX, stop the VM, increase the memory up to 2Gb and restart the VM.
+For AWX (https://github.com/ansible/awx), stop the VM, increase the memory up to 2Gb and restart the VM.
     
     sudo yum install -y git
     ansible-galaxy install -r roles/requirements.yml 
