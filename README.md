@@ -1,7 +1,8 @@
 Forked from Jerome Penekuzu Ansible workshop
 
-Download and install Vagrant from https://www.vagrantup.com/downloads.html
-Download and install VirtualBox from https://www.virtualbox.org/wiki/Downloads
+Install prerequisites (on a Windows workstation):
+- Download and install Vagrant from https://www.vagrantup.com/downloads.html
+- Download and install VirtualBox from https://www.virtualbox.org/wiki/Downloads
 
 Clone this repo; and cd into it.
 
@@ -53,10 +54,10 @@ Other commands executed during the workshop (from .bash_history file; some may b
     cd ../vault/
     ansible-playbook vault.yaml --ask-vault-pass
     
+For AWX, stop the VM, increase the memory up to 2Gb and restart the VM.
+    
     sudo yum install -y git
     ansible-galaxy install -r roles/requirements.yml 
     ansible-playbook -i hosts awx.yaml 
     ansible-playbook -i hosts awx.yaml -u vagrant -k -b -K
     ssh vagrant@192.168.100.140
-    
-    
